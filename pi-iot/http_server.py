@@ -20,6 +20,11 @@ SUPPORTED_PINS = {
 
 
 def main():
+    '''
+    HTTP Server designed to run on a Raspberry Pi to control LEDs on a Pi Hat
+
+    The supported LEDs are found in `SUPPORTED_PINS`
+    '''
     board = LEDBoard(*(SUPPORTED_PINS[led_name] for led_name in SUPPORTED_PINS), active_high=False)
 
     mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
